@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ada's Xpression — Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top announcement -->
+  <div class="topbar">
+    <p>Free delivery within select areas • Pay on delivery available (optional)</p>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#">
+        <!-- IMAGE LOGO (not text) -->
+        <img src="assets/logo.png" alt="Ada's Xpression logo" class="brand__logo" />
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#shop">Shop</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="iconBtn" id="menuBtn" aria-label="Open menu">
+          <span class="burger"></span>
+        </button>
+
+        <button class="cartBtn" id="cartBtn" aria-label="Open cart">
+          <span class="cartIcon" aria-hidden="true"></span>
+          <span class="cartCount" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <h1>Comfort you can carry.</h1>
+        <p>
+          Shop durable, insulated hot-water bags designed for warmth, relaxation,
+          and everyday comfort. Multiple colors available.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#shop">Shop now</a>
+          <a class="btn btn--ghost" href="#benefits">See benefits</a>
+        </div>
+
+        <div class="hero__stats">
+          <div class="stat">
+            <span class="stat__num">4.7★</span>
+            <span class="stat__label">avg rating</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">Portable</span>
+            <span class="stat__label">easy to carry</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">Insulated</span>
+            <span class="stat__label">keeps warm longer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <div class="heroCard">
+          <img
+            src="assets/products/hot-water-bag-1.jpg"
+            alt="Hot water bag product preview"
+            class="heroCard__img"
+          />
+          <div class="heroCard__info">
+            <div>
+              <p class="heroCard__title">Insulated Hot-Water Bag</p>
+              <p class="heroCard__sub">Soft cover • Multiple colors</p>
+            </div>
+            <a class="btn btn--small" href="#shop">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop controls -->
+  <section class="shop" id="shop">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>Shop</h2>
+        <p>Find your preferred color and add to cart.</p>
+      </div>
+
+      <div class="controls">
+        <div class="search">
+          <input id="searchInput" type="search" placeholder="Search products…" />
+          <span class="searchIcon" aria-hidden="true"></span>
+        </div>
+
+        <select id="categorySelect" class="select">
+          <option value="all">All categories</option>
+          <option value="hot-water-bags">Hot-water bags</option>
+          <option value="covers">Covers</option>
+        </select>
+
+        <select id="sortSelect" class="select">
+          <option value="featured">Sort: Featured</option>
+          <option value="priceLow">Price: Low to High</option>
+          <option value="priceHigh">Price: High to Low</option>
+          <option value="ratingHigh">Rating: High to Low</option>
+        </select>
+      </div>
+
+      <!-- Product grid -->
+      <div class="grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <!-- Benefits (based on your image text) -->
+  <section class="benefits" id="benefits">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>Item benefits</h2>
+        <p>Designed for comfort, warmth, and portability.</p>
+      </div>
+
+      <div class="benefitGrid">
+        <div class="benefitCard">
+          <h3>Small & portable</h3>
+          <p>Easy to carry in a handbag, backpack, or laptop bag.</p>
+        </div>
+        <div class="benefitCard">
+          <h3>Insulated warmth</h3>
+          <p>Quality insulation helps retain warmth for longer periods.</p>
+        </div>
+        <div class="benefitCard">
+          <h3>Comfort support</h3>
+          <p>Useful for warmth and relaxation during discomfort or cold days.</p>
+        </div>
+        <div class="benefitCard">
+          <h3>Multi-purpose use</h3>
+          <p>Can be used for neck/shoulder comfort and general muscle relief.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>FAQ</h2>
+        <p>Quick answers before you order.</p>
+      </div>
+
+      <div class="accordion" id="faqAccordion">
+        <button class="accItem" aria-expanded="false">
+          <span>How long does it stay warm?</span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <div class="accPanel">
+          It depends on water temperature and room conditions. The insulated cover helps keep warmth longer.
+        </div>
+
+        <button class="accItem" aria-expanded="false">
+          <span>Is it safe to use?</span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <div class="accPanel">
+          Yes—use hot (not boiling) water, fill to a safe level, and ensure the cap is tightly closed before use.
+        </div>
+
+        <button class="accItem" aria-expanded="false">
+          <span>Do you deliver nationwide?</span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <div class="accPanel">
+          Delivery options can be customized for your location. Add items to cart and proceed to checkout to see details.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container contact__grid">
+      <div>
+        <div class="sectionHead">
+          <h2>Contact</h2>
+          <p>Questions or bulk orders? Send a message.</p>
+        </div>
+
+        <form class="form" id="contactForm">
+          <div class="formRow">
+            <label>
+              Name
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Phone
+              <input type="tel" name="phone" required />
+            </label>
+          </div>
+          <label>
+            Message
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button class="btn btn--primary" type="submit">Send message</button>
+          <p class="formNote" id="contactNote" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="contactCard">
+        <h3>Ada’s Xpression</h3>
+        <p>Comfort items • Lifestyle essentials • Fast response</p>
+
+        <div class="contactMeta">
+          <div><span class="dot"></span> Open: Mon–Sat</div>
+          <div><span class="dot"></span> Delivery available</div>
+          <div><span class="dot"></span> Secure checkout</div>
+        </div>
+
+        <div class="payBadges">
+          <span class="badge">Card</span>
+          <span class="badge">Transfer</span>
+          <span class="badge">Pay on delivery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="Ada's Xpression logo" class="footer__logo" />
+        <p>Comfort essentials made simple.</p>
+      </div>
+
+      <div class="footer__links">
+        <a href="#shop">Shop</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <p class="footer__copy">© <span id="year"></span> Ada’s Xpression. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <aside class="drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer__overlay" id="drawerOverlay"></div>
+    <div class="drawer__panel" role="dialog" aria-label="Shopping cart">
+      <div class="drawer__head">
+        <h3>Your cart</h3>
+        <button class="iconClose" id="closeCartBtn" aria-label="Close cart"></button>
+      </div>
+
+      <div class="drawer__content" id="cartItems"></div>
+
+      <div class="drawer__footer">
+        <div class="totals">
+          <div class="totals__row">
+            <span>Subtotal</span>
+            <strong id="cartSubtotal">₦0</strong>
+          </div>
+          <p class="muted">Delivery fee may apply depending on location.</p>
+        </div>
+
+        <button class="btn btn--primary btn--full" id="checkoutBtn" href="checkout.html">Checkout</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Checkout modal -->
+  <div class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal__overlay" id="checkoutOverlay"></div>
+    <div class="modal__panel" role="dialog" aria-label="Checkout">
+      <div class="modal__head">
+        <h3>Checkout</h3>
+        <button class="iconClose" id="closeCheckoutBtn" aria-label="Close checkout"></button>
+      </div>
+
+      <form class="checkout" id="checkoutForm">
+        <div class="formRow">
+          <label>
+            Full name
+            <input type="text" name="fullName" required />
+          </label>
+          <label>
+            Phone
+            <input type="tel" name="phone" required />
+          </label>
+        </div>
+
+        <label>
+          Email (optional)
+          <input type="email" name="email" />
+        </label>
+
+        <label>
+          Delivery address
+          <input type="text" name="address" required />
+        </label>
+
+        <div class="formRow">
+          <label>
+            City
+            <input type="text" name="city" required />
+          </label>
+          <label>
+            State
+            <input type="text" name="state" required />
+          </label>
+        </div>
+
+        <label>
+          Payment method
+          <select name="payment" required>
+            <option value="card">Card</option>
+            <option value="transfer">Bank transfer</option>
+            <option value="pod">Pay on delivery</option>
+          </select>
+        </label>
+
+        <div class="checkoutSummary">
+          <div class="checkoutSummary__row">
+            <span>Items</span>
+            <strong id="checkoutItemsCount">0</strong>
+          </div>
+          <div class="checkoutSummary__row">
+            <span>Total</span>
+            <strong id="checkoutTotal">₦0</strong>
+          </div>
+        </div>
+
+        <button class="btn btn--primary btn--full" type="submit">Place order</button>
+        <p class="formNote" id="checkoutNote" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Quick view modal -->
+  <div class="modal" id="quickViewModal" aria-hidden="true">
+    <div class="modal__overlay" id="quickOverlay"></div>
+    <div class="modal__panel modal__panel--wide" role="dialog" aria-label="Product details">
+      <div class="modal__head">
+        <h3 id="qvTitle">Product</h3>
+        <button class="iconClose" id="closeQuickBtn" aria-label="Close"></button>
+      </div>
+
+      <div class="qv">
+        <img id="qvImg" class="qv__img" alt="" />
+        <div class="qv__info">
+          <p class="price" id="qvPrice">₦0</p>
+          <p class="muted" id="qvDesc"></p>
+
+          <div class="qv__meta">
+            <span class="pill" id="qvCategory">Category</span>
+            <span class="pill" id="qvRating">Rating</span>
+          </div>
+
+          <div class="qv__actions">
+            <button class="btn btn--primary" id="qvAddBtn">Add to cart</button>
+            <button class="btn btn--ghost" id="qvBuyBtn">Buy now</button>
+          </div>
+
+          <ul class="qv__bullets">
+            <li>Portable and easy to carry</li>
+            <li>Insulated cover helps retain warmth</li>
+            <li>Comfort support for cold days</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="data.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

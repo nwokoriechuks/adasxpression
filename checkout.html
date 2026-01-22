@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — Ada's Xpression</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="checkout.css" />
+
+  <script src="data.js"></script>
+  <!-- Paystack (optional, used only if PAYSTACK_PUBLIC_KEY is set) -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body>
+  <div class="topbar">
+    <p>Secure checkout • Delivery fee depends on location</p>
+  </div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Ada's Xpression logo" class="brand__logo" />
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="index.html#shop">Shop</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="iconBtn" id="menuBtn" aria-label="Open menu">
+          <span class="burger"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="checkoutPage">
+    <div class="container checkoutGrid">
+      <!-- Order summary -->
+      <section class="panel">
+        <div class="panelHead">
+          <h2>Order Summary</h2>
+          <a class="muted" href="index.html#shop">Continue shopping</a>
+        </div>
+
+        <div id="summaryItems" class="summaryItems"></div>
+
+        <div class="summaryTotals">
+          <div class="row">
+            <span>Subtotal</span>
+            <strong id="subtotal">₦0</strong>
+          </div>
+          <p class="muted small">
+            Delivery fee will be confirmed based on your address.
+          </p>
+        </div>
+      </section>
+
+      <!-- Customer form -->
+      <section class="panel">
+        <div class="panelHead">
+          <h2>Delivery Details</h2>
+          <p class="muted small">Fill correctly to avoid delivery delays.</p>
+        </div>
+
+        <form id="checkoutForm" class="checkoutForm">
+          <div class="formRow">
+            <label>Full name
+              <input name="fullName" required />
+            </label>
+            <label>Phone
+              <input name="phone" required />
+            </label>
+          </div>
+
+          <label>Email (optional)
+            <input type="email" name="email" />
+          </label>
+
+          <label>Delivery address
+            <input name="address" required />
+          </label>
+
+          <div class="formRow">
+            <label>City
+              <input name="city" required />
+            </label>
+            <label>State
+              <input name="state" required />
+            </label>
+          </div>
+
+          <label>Payment method
+            <select name="payment" required>
+              <option value="card">Card (Paystack)</option>
+              <option value="transfer">Bank transfer</option>
+              <option value="pod">Pay on delivery</option>
+            </select>
+          </label>
+
+          <div class="actions">
+            <button type="button" class="btn btn--primary btn--full" id="payBtn">
+              Pay / Place order
+            </button>
+            <button type="button" class="btn btn--ghost btn--full" id="waOrderBtn">
+              Place order on WhatsApp
+            </button>
+          </div>
+
+          <p id="note" class="muted small" aria-live="polite"></p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <script src="checkout.js"></script>
+</body>
+</html>

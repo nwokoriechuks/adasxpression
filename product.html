@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product — Ada's Xpression</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="product.css" />
+</head>
+<body>
+  <div class="topbar">
+    <p>Free delivery within select areas • Pay on delivery available (optional)</p>
+  </div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Ada's Xpression logo" class="brand__logo" />
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="index.html#shop">Shop</a>
+        <a href="index.html#benefits">Benefits</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="iconBtn" id="menuBtn" aria-label="Open menu">
+          <span class="burger"></span>
+        </button>
+
+        <button class="cartBtn" id="cartBtn" aria-label="Open cart">
+          <span class="cartIcon" aria-hidden="true"></span>
+          <span class="cartCount" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="productPage">
+    <div class="container">
+      <div class="crumbs">
+        <a href="index.html#shop">← Back to Shop</a>
+        <span class="muted">/</span>
+        <span class="muted" id="crumbProduct">Product</span>
+      </div>
+
+      <section class="productLayout">
+        <!-- Gallery -->
+        <div class="gallery">
+          <div class="galleryMain">
+            <img id="mainImg" alt="Product image" />
+          </div>
+
+          <div class="thumbs" id="thumbs"></div>
+        </div>
+
+        <!-- Details -->
+        <div class="details">
+          <div class="detailsTop">
+            <h1 id="pTitle">Product</h1>
+            <div class="metaRow">
+              <span class="pill" id="pCategory">Category</span>
+              <span class="pill" id="pRating">★ 0.0</span>
+            </div>
+          </div>
+
+          <p class="price" id="pPrice">₦0</p>
+          <p class="muted" id="pDesc"></p>
+
+          <div class="variantBlock">
+  <p class="muted variantLabel">Choose color</p>
+  <div class="variants" id="variantList"></div>
+</div>
+
+<button class="btn btn--ghost btn--full" id="whatsappBtn">Order on WhatsApp</button>
+
+
+          <div class="divider"></div>
+
+          <div class="buyBox">
+            <div class="qtyWrap">
+              <span class="muted">Quantity</span>
+              <div class="qty" aria-label="Quantity controls">
+                <button type="button" id="decQty" aria-label="Decrease">−</button>
+                <span id="qtyVal" aria-live="polite">1</span>
+                <button type="button" id="incQty" aria-label="Increase">+</button>
+              </div>
+            </div>
+
+            <div class="buyActions">
+              <button class="btn btn--primary btn--full" id="addToCartBtn">Add to cart</button>
+              <button class="btn btn--ghost btn--full" id="buyNowBtn">Buy now</button>
+            </div>
+
+            <p class="note" id="actionNote" aria-live="polite"></p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="infoGrid">
+            <div class="infoCard">
+              <h3>Item Description</h3>
+              <ul>
+                <li><strong>Small Size for Easy Portability:</strong> Can fit in your handbag, backpack and laptop bag.</li>
+                <li><strong>Insulated to Keep Warm:</strong> Quality material helps retain warmth longer.</li>
+                <li><strong>Comfort support:</strong> Useful for warmth, comfort and relaxation.</li>
+                <li><strong>Multi-purpose:</strong> Neck and body comfort use for cold days and aches.</li>
+              </ul>
+            </div>
+
+            <div class="infoCard">
+              <h3>Delivery & Returns</h3>
+              <ul>
+                <li>Delivery fee depends on location.</li>
+                <li>Check item on delivery where applicable.</li>
+                <li>Report issues within 24 hours of delivery.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related products -->
+      <section class="related">
+        <div class="sectionHead">
+          <h2>Related products</h2>
+          <p>You might also like these.</p>
+        </div>
+        <div class="grid" id="relatedGrid"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="Ada's Xpression logo" class="footer__logo" />
+        <p>Comfort essentials made simple.</p>
+      </div>
+
+      <div class="footer__links">
+        <a href="index.html#shop">Shop</a>
+        <a href="index.html#benefits">Benefits</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+
+      <p class="footer__copy">© <span id="year"></span> Ada’s Xpression. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Cart drawer (same structure as index.html) -->
+  <aside class="drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer__overlay" id="drawerOverlay"></div>
+    <div class="drawer__panel" role="dialog" aria-label="Shopping cart">
+      <div class="drawer__head">
+        <h3>Your cart</h3>
+        <button class="iconClose" id="closeCartBtn" aria-label="Close cart"></button>
+      </div>
+
+      <div class="drawer__content" id="cartItems"></div>
+
+      <div class="drawer__footer">
+        <div class="totals">
+          <div class="totals__row">
+            <span>Subtotal</span>
+            <strong id="cartSubtotal">₦0</strong>
+          </div>
+          <p class="muted">Delivery fee may apply depending on location.</p>
+        </div>
+
+        <a class="btn btn--primary btn--full" href="index.html#contact">Proceed (Contact)</a>
+      </div>
+    </div>
+  </aside>
+<script src="data.js"></script>
+  <script src="product.js"></script>
+</body>
+</html>
