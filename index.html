@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ada's Xpression — Shop</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <!-- Top announcement -->
@@ -28,7 +32,11 @@
       </nav>
 
       <div class="header__actions">
-        <button class="iconBtn" id="menuBtn" aria-label="Open menu">
+        
+        <button class="themeToggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="themeToggle__icon" id="themeIcon" aria-hidden="true">☾</span>
+        </button>
+<button class="iconBtn" id="menuBtn" aria-label="Open menu">
           <span class="burger"></span>
         </button>
 
@@ -189,14 +197,15 @@
 
   <!-- Contact -->
   <section class="contact" id="contact">
-    <div class="container contact__grid">
-      <div>
-        <div class="sectionHead">
-          <h2>Contact</h2>
-          <p>Questions or bulk orders? Send a message.</p>
-        </div>
+    <div class="container">
+      <div class="sectionHead sectionHead--wide">
+        <h2>Contact</h2>
+        <p>Questions or bulk orders? Send a message.</p>
+      </div>
 
-        <form class="form" id="contactForm">
+      <div class="contact__grid">
+        <div>
+          <form class="form" id="contactForm">
           <div class="formRow">
             <label>
               Name
@@ -214,9 +223,9 @@
           <button class="btn btn--primary" type="submit">Send message</button>
           <p class="formNote" id="contactNote" aria-live="polite"></p>
         </form>
-      </div>
+        </div>
 
-      <div class="contactCard">
+        <div class="contactCard">
         <h3>Ada’s Xpression</h3>
         <p>Comfort items • Lifestyle essentials • Fast response</p>
 
@@ -231,6 +240,7 @@
           <span class="badge">Transfer</span>
           <span class="badge">Pay on delivery</span>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -274,7 +284,7 @@
           <p class="muted">Delivery fee may apply depending on location.</p>
         </div>
 
-        <button class="btn btn--primary btn--full" id="checkoutBtn" href="checkout.html">Checkout</button>
+        <a class="btn btn--primary btn--full" id="checkoutBtn" href="checkout.html">Checkout</a>
       </div>
     </div>
   </aside>

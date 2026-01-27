@@ -1,3 +1,30 @@
+/* ================= Theme (Dark/Light) ================= */
+(function initTheme(){
+  const STORAGE_KEY = "adax_theme";
+  const root = document.documentElement;
+
+  function apply(theme){
+    root.dataset.theme = theme;
+    const icon = document.getElementById("themeIcon");
+    const btn = document.getElementById("themeToggle");
+    if (icon) icon.textContent = theme === "light" ? "☀" : "☾";
+    if (btn) btn.setAttribute("aria-label", theme === "light" ? "Switch to dark mode" : "Switch to light mode");
+  }
+
+  const saved = localStorage.getItem(STORAGE_KEY);
+  const preferred = saved || "dark";
+  apply(preferred);
+
+  const btn = document.getElementById("themeToggle");
+  if (btn){
+    btn.addEventListener("click", () => {
+      const next = (root.dataset.theme === "light") ? "dark" : "light";
+      localStorage.setItem(STORAGE_KEY, next);
+      apply(next);
+    });
+  }
+})();
+
 // script.js (UPDATED) — Ada's Xpression with Variants + Real Checkout + WhatsApp
 // Requires data.js loaded before this file.
 

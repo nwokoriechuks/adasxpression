@@ -6,6 +6,10 @@
   <title>Product — Ada's Xpression</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="product.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <div class="topbar">
@@ -26,7 +30,11 @@
       </nav>
 
       <div class="header__actions">
-        <button class="iconBtn" id="menuBtn" aria-label="Open menu">
+        
+        <button class="themeToggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="themeToggle__icon" id="themeIcon" aria-hidden="true">☾</span>
+        </button>
+<button class="iconBtn" id="menuBtn" aria-label="Open menu">
           <span class="burger"></span>
         </button>
 
